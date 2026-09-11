@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>el Social • Bar &amp; Restaurante en San José — Sabana y Morazán</title>
+  <meta name="description" content="el Social: bar y restaurante en el corazón de Chepe, con sedes en Sabana y Morazán. Cocteles con guaro Cacique, tablazos de shots, birra fría, bocas y mascaradas los sábados.">
+  <link rel="stylesheet" href="./assets/css/style.css?v=5">
+  <link rel="stylesheet" href="./assets/css/brand-motion.css?v=3">
+  <link rel="stylesheet" href="./assets/css/image-context.css?v=1">
+  <link rel="stylesheet" href="./assets/css/brand-details.css?v=1">
+  <link rel="stylesheet" href="./assets/css/desktop-editorial.css?v=1">
+  <link rel="stylesheet" href="./assets/css/mobile-premium.css?v=1">
+  <script src="./assets/js/desktop-editorial.js?v=1" defer></script>
+  <script src="./assets/js/main.js?v=6" defer></script>
+  <script src="./assets/js/brand-motion.js?v=3" defer></script>
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <!--
+    PENDIENTES DE CONFIRMAR CON EL SOCIAL ANTES DE PUBLICAR:
+      · Dirección exacta de la sede Sabana (la de Morazán viene de su propio afiche
+        del Tablazo: "costado este del Parque Morazán").
+      · Qué fotografía de fachada corresponde a cada sede.
+      · Horarios completos por sede. El sábado hasta las 5am sale de su campaña
+        "Sabadito alegre"; el resto es de referencia.
+      · Teléfonos, WhatsApp y correo (los actuales son de muestra).
+      · Las reseñas son de muestra para la propuesta visual.
+      · El formulario de reserva no envía datos: es una maqueta sin backend.
+    Fotografía y afiches: material real de el Social.
+  -->
+
+  <!-- WCAG 2.4.1 Skip-to-content bypass block -->
+  <a href="#hero" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- =========================================================================
+       1. HEADER & NAVIGATION (STICKY GLASSMORPHISM & LOGO BADGE)
+       ========================================================================= -->
+  <header id="main-header" class="header-sticky">
+    <div id="nav-container" class="nav-container container">
+      <!-- Brand Logo Link -->
+      <a href="#hero" class="brand-logo-link" aria-label="Ir al inicio de el Social">
+        <div class="logo-badge">
+          <img src="./assets/images/logo.png" alt="el Social Logo" class="logo-img" width="591" height="296" loading="lazy">
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#hero" class="nav-link active">Inicio</a>
+        <a href="#historia" class="nav-link">Historia</a>
+        <a href="#experiencias" class="nav-link">La Carta</a>
+        <a href="#galeria" class="nav-link">Galería</a>
+        <a href="#horarios" class="nav-link">Sedes</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <!-- Nav CTA & Mobile Hamburger -->
+      <div class="nav-actions">
+        <a href="#reserva" id="nav-cta" class="btn btn-primary btn-desktop">Reservar Mesa</a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-out Drawer Backdrop -->
+    <div id="mobile-drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+    <!-- Mobile Slide-out Drawer -->
+    <nav id="mobile-drawer" class="mobile-drawer" aria-label="Menú de navegación móvil" aria-hidden="true">
+      <div class="drawer-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <div class="logo-badge">
+          <img src="./assets/images/logo.png" alt="el Social Logo" class="logo-img" style="height: 36px; width: auto;" loading="lazy">
+        </div>
+        <button id="mobile-drawer-close" class="lightbox-close-btn" style="position: static; width: 38px; height: 38px; font-size: 1.25rem;" aria-label="Cerrar menú">&times;</button>
+      </div>
+      <div class="drawer-links">
+        <a href="#hero" class="drawer-link">Inicio</a>
+        <a href="#historia" class="drawer-link">Historia</a>
+        <a href="#experiencias" class="drawer-link">La Carta</a>
+        <a href="#galeria" class="drawer-link">Galería</a>
+        <a href="#horarios" class="drawer-link">Sedes</a>
+        <a href="#contacto" class="drawer-link">Contacto</a>
+      </div>
+      <div style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="#reserva" class="btn btn-primary" style="width: 100%; text-align: center;">Reservar Mesa</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO — relevo de tres fotografías reales bajo velo marino
+       ========================================================================= -->
+  <section id="hero" class="hero-section hero-dark">
+    <div class="hero-slides" aria-hidden="true">
+      <div class="hero-slide is-active" style="background-image: url('./assets/images/bar-papel-picado.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('./assets/images/hero-barra.jpg'); background-position: center;"></div>
+      <div class="hero-slide" style="background-image: url('./assets/images/esquina-atardecer.jpg'); background-position: center;"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="hero-badge-wrap">
+        <span class="badge-pill badge-coral">EN EL CORAZÓN DE CHEPE · SABANA &amp; MORAZÁN</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-line">La vida sabe</span>
+        <span class="hero-line">mejor en</span>
+        <span class="hero-word">Social<span class="hero-asterisk" aria-hidden="true">✳</span></span>
+        <span class="script-accent">De día, cocina. De noche, encontrarnos.</span>
+      </h1>
+
+      <p class="hero-lead">
+        Una boca al centro. Otra ronda. Esa canción.<br>
+        Tu gente y vos, en el corazón de Chepe. Sabana y Morazán: dos sedes, la misma buena vara.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#reserva" id="hero-cta-book" class="btn btn-primary btn-lg">Reservar una Mesa</a>
+        <a href="#experiencias" id="hero-cta-menu" class="btn btn-outline-white btn-lg">Ver la Carta</a>
+      </div>
+
+      <div class="hero-collage" aria-label="Un vistazo al ambiente de el Social">
+        <span class="desktop-edition" aria-hidden="true">SAN JOSÉ, COSTA RICA <span>LA CASA DE LOS MÁS SOCIALES</span></span>
+        <figure class="social-photo social-photo-main">
+          <img src="./assets/images/bar-papel-picado.jpg" alt="La barra de el Social bajo un techo de papel picado" width="1200" height="1200" fetchpriority="high">
+          <figcaption>CHEPE TIENE PUNTO DE ENCUENTRO ↗</figcaption>
+        </figure>
+        <figure class="social-photo social-photo-small">
+          <img src="./assets/images/coctel-ciudad.jpg" alt="Pieza de coctelería: una clienta sostiene un coctel naranja frente a una pared de ladrillo" width="1120" height="1400">
+          <figcaption>¿La otra? Aquí.</figcaption>
+        </figure>
+        <div class="social-stamp" aria-hidden="true"><span>BUENA MESA</span><b>Buena<br>compañía.</b><span>EL SOCIAL · SAN JOSÉ</span></div>
+        <span class="collage-note" aria-hidden="true">Aquí se viene a vivirla.</span>
+      </div>
+
+      <!-- 4 Value Pillars Strip -->
+      <div class="hero-pillars-strip">
+        <div class="pillar-item hero-badge pill">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22h8"></path><path d="M12 11v11"></path><path d="m19 3-7 8-7-8Z"></path></svg>
+          </div>
+          <span class="pillar-text">Cocteles con Cacique</span>
+        </div>
+
+        <div class="pillar-item hero-badge pill">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 11h1a3 3 0 0 1 0 6h-1"></path><path d="M9 12v6"></path><path d="M13 12v6"></path><path d="M5 8h12v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8Z"></path><path d="M14 8c0-2.5 2-2.5 2-5-1 0-2 .5-2 .5S13 2 11 2 8 3.5 8 3.5 7 3 6 3c0 2.5 2 2.5 2 5"></path></svg>
+          </div>
+          <span class="pillar-text">Birra desde ₡2.000</span>
+        </div>
+
+        <div class="pillar-item hero-badge pill">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>
+          </div>
+          <span class="pillar-text">Bocas para compartir</span>
+        </div>
+
+        <div class="pillar-item hero-badge pill">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          </div>
+          <span class="pillar-text">Sábados hasta las 5am</span>
+        </div>
+      </div>
+
+      <!-- Animated Scroll-Down Cue -->
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="#historia" class="hero-scroll-cue" aria-label="Bajar a sección Historia" style="display: inline-flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600;">
+          <span>Conocé el Social</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <button class="motion-toggle" type="button" aria-pressed="false" aria-label="Pausar animaciones"><span aria-hidden="true">Ⅱ</span> <span class="motion-label">Pausar movimiento</span></button>
+
+  <!-- =========================================================================
+       3. FRANJA DE FRASES — las de sus propias campañas, en desfile continuo
+       ========================================================================= -->
+  <div class="frases-banda" aria-label="Frases de el Social">
+    <!--
+      La pista lleva las frases dos veces: la animación termina justo donde
+      empieza la segunda copia, así el desfile no salta y, con animaciones
+      reducidas, el estado final se ve igual que el inicial.
+    -->
+    <div class="frases-pista">
+      <span class="frase">Ñadie me quita lo bailado</span><span class="frase-aspa" aria-hidden="true">✳</span>
+      <span class="frase">El nivel social se mide en shots</span><span class="frase-aspa" aria-hidden="true">✳</span>
+      <span class="frase">Mejor social que mal acompañado</span><span class="frase-aspa" aria-hidden="true">✳</span>
+      <span class="frase">Aplaudimos y no juzgamos</span><span class="frase-aspa" aria-hidden="true">✳</span>
+      <span class="frase">La casa de los más Sociales</span><span class="frase-aspa" aria-hidden="true">✳</span>
+      <span class="frase" aria-hidden="true">Ñadie me quita lo bailado</span><span class="frase-aspa" aria-hidden="true">✳</span>
+      <span class="frase" aria-hidden="true">El nivel social se mide en shots</span><span class="frase-aspa" aria-hidden="true">✳</span>
+      <span class="frase" aria-hidden="true">Mejor social que mal acompañado</span><span class="frase-aspa" aria-hidden="true">✳</span>
+      <span class="frase" aria-hidden="true">Aplaudimos y no juzgamos</span><span class="frase-aspa" aria-hidden="true">✳</span>
+      <span class="frase" aria-hidden="true">La casa de los más Sociales</span><span class="frase-aspa" aria-hidden="true">✳</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       4. HISTORIA
+       ========================================================================= -->
+  <section class="social-planner" id="tu-plan" aria-labelledby="planner-title" data-moment="tarde">
+    <div class="container planner-grid">
+      <div class="planner-copy">
+        <span class="planner-eyebrow">UN LUGAR. MIL FORMAS DE QUEDARSE.</span>
+        <h2 id="planner-title">¿En qué mood<br>venís <em>hoy?</em></h2>
+        <p>Vos ponés la compañía.<br>Nosotros ponemos el lugar.</p>
+        <div class="moment-switch" role="group" aria-label="Elegí tu momento en el Social">
+          <button type="button" data-moment="dia" aria-pressed="false">01 <span>Para picar</span> ↗</button>
+          <button type="button" data-moment="tarde" aria-pressed="true">02 <span>De tardeada</span> ↗</button>
+          <button type="button" data-moment="noche" aria-pressed="false">03 <span>Con ganas de noche</span> ↗</button>
+        </div>
+        <span class="planner-footnote">Tres momentos. La misma buena compañía.</span>
+      </div>
+      <div class="moment-stage">
+        <div class="moment-photos" aria-hidden="true">
+          <img data-scene="dia" src="./assets/images/birra-boca.jpg" alt="" width="1120" height="1400" loading="lazy">
+          <img data-scene="tarde" class="scene-active" src="./assets/images/terraza-mural.jpg" alt="" width="1051" height="1400" loading="lazy">
+          <img data-scene="noche" src="./assets/images/brindis-patio.jpg" alt="" width="600" height="400" loading="lazy">
+        </div>
+        <span class="moment-coordinate" aria-hidden="true">SAN JOSÉ, CR · PURA VIDA</span>
+        <span class="moment-orbit" aria-hidden="true">✳</span>
+        <div class="moment-ticket">
+          <div class="ticket-heading"><span>TU PRÓXIMO BUEN RECUERDO</span><span aria-hidden="true">↗</span></div>
+          <div class="ticket-content" aria-live="polite" aria-atomic="true">
+            <span class="ticket-kicker">02 / LA TARDE ES NUESTRA</span>
+            <h3>Una birra.<br>Cero prisa.</h3>
+            <p>Bancas afuera, algo para picar y una conversación que se alarga sola.</p>
+          </div>
+          <a class="ticket-cta" href="#reserva">Quiero este plan <span aria-hidden="true">↗</span></a>
+          <div class="ticket-bottom" aria-hidden="true"><span>EL SOCIAL</span><span class="ticket-barcode"></span><span>02 — 03</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="historia" class="story-section section-story">
+    <div class="container">
+      <div class="story-grid">
+        <!-- Story Text Column -->
+        <div>
+          <span class="badge-pill badge-wine">NUESTRA HISTORIA</span>
+          <h2 class="section-title" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+            Una esquina de Chepe, abierta a todo el mundo
+          </h2>
+
+          <p class="text-lead" style="margin-bottom: 1.25rem;">
+            el Social nació con una idea sencilla: que San José volviera a tener un lugar donde uno puede
+            llegar solo y salir acompañado. Sin códigos de vestimenta ni poses. Ladrillo a la vista,
+            papel picado de pared a pared, la barra de cobre lustrada y música que la gente se sabe.
+          </p>
+
+          <!-- Dato histórico tomado de su propia campaña -->
+          <div class="dato-historico">
+            <img src="./assets/images/afiche-1897.webp" alt="Afiche de el Social: 1897, nace una esquina histórica de San José" width="800" height="1000" loading="lazy">
+            <div>
+              <span class="dato-anio">1897</span>
+              <p class="dato-texto">
+                Nace la esquina histórica que hoy ocupa el Social. Más de un siglo después sigue siendo
+                punto de encuentro, ahora con la barra abierta y el techo lleno de banderines.
+              </p>
+            </div>
+          </div>
+
+          <p style="margin-bottom: 1.25rem;">
+            La barra es el corazón. De ahí salen los cocteles de la casa hechos con guaro Cacique —Tamarindo,
+            Chepe Mula, Pisuicas, Pelona, Cadejo— que la gente ya pide por nombre, junto a los clásicos bien
+            ejecutados. Cerveza nacional siempre fría desde ₡2.000 y el Tablazo, la tabla de shots que se
+            pide cuando la mesa se pone seria.
+          </p>
+
+          <p style="margin-bottom: 2rem;">
+            En la cocina no inventamos: hacemos bien lo de siempre. Bocas para picar toda la noche,
+            chifrijo, chicharrones y almuerzo de casa al mediodía. Y los sábados llegan las mascaradas
+            a dar la vuelta entre las mesas, porque acá se aplaude y no se juzga.
+          </p>
+
+          <!-- 3 Value Cards -->
+          <div class="story-values-grid">
+            <div class="value-card card">
+              <div class="value-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"></path><path d="M12 11v11"></path><path d="m19 3-7 8-7-8Z"></path></svg>
+              </div>
+              <div>
+                <h3 class="value-card-title">La Barra</h3>
+                <p class="value-card-desc">Cocteles de la casa con guaro Cacique, clásicos bien hechos, catorce birras en carta y tablazos de shots.</p>
+              </div>
+            </div>
+
+            <div class="value-card card">
+              <div class="value-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>
+              </div>
+              <div>
+                <h3 class="value-card-title">La Cocina</h3>
+                <p class="value-card-desc">Bocas para compartir, chifrijo, chicharrones y almuerzo de casa. Porciones honestas, precio de barrio.</p>
+              </div>
+            </div>
+
+            <div class="value-card card">
+              <div class="value-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a3 3 0 0 1 6 0v5"></path><path d="M5 11h14l-1.5 9.5a2 2 0 0 1-2 1.5h-7a2 2 0 0 1-2-1.5Z"></path><circle cx="10" cy="16" r="1"></circle><circle cx="14" cy="16" r="1"></circle></svg>
+              </div>
+              <div>
+                <h3 class="value-card-title">La Fiesta</h3>
+                <p class="value-card-desc">Mascaradas, cumpleaños, partidos en pantalla y sabaditos que se estiran hasta las cinco de la mañana.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Visual Column -->
+        <div class="story-visual-wrap">
+          <img src="./assets/images/hero-barra.jpg" alt="Barra de el Social: pared de ladrillo con el rótulo pintado a mano y la estantería de licores iluminada" loading="lazy" width="1200" height="675">
+          <div class="story-badge-corner">
+            <div class="story-badge-title">el Social</div>
+            <div class="story-badge-sub">Bar &amp; Restaurante • San José, Costa Rica</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. BANDA DE MARCA — ilustración propia, a todo lo ancho
+       ========================================================================= -->
+  <section class="banda-marca" aria-label="La casa de los más Sociales, en el corazón de Chepe">
+    <img src="./assets/images/banda-sociales.webp" alt="Ilustración de el Social: dos mascaradas bailando junto a la frase «La casa de los más Sociales, en el corazón de Chepe»" width="1709" height="750" loading="lazy">
+  </section>
+
+  <!-- =========================================================================
+       6. MOMENTOS DEL DÍA + LA NOCHE + LA CARTA
+       ========================================================================= -->
+  <section id="experiencias" class="experiences-section section-experiences">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-pill badge-navy">EL DÍA EN EL SOCIAL</span>
+        <h2 class="section-title">Del almuerzo al último trago</h2>
+        <p class="section-description">
+          El mismo local cambia tres veces al día: mesa de almuerzo al mediodía, birra y bocas por la tarde,
+          barra y mascaradas cuando cae la noche.
+        </p>
+      </div>
+
+      <!-- Interactive Category Tabs -->
+      <div class="tab-nav" role="tablist" aria-label="Categorías de momentos">
+        <button class="tab-btn active" data-category="all" role="tab" aria-selected="true">Todo el día</button>
+        <button class="tab-btn" data-category="cocina" role="tab" aria-selected="false">Cocina</button>
+        <button class="tab-btn" data-category="barra" role="tab" aria-selected="false">Barra</button>
+        <button class="tab-btn" data-category="noche" role="tab" aria-selected="false">Noche</button>
+      </div>
+
+      <!-- 3 Experience Cards Grid -->
+      <div class="experience-grid">
+        <!-- Card 1: Cocina -->
+        <div class="experience-card card" data-category="cocina">
+          <div class="experience-card-img-wrap">
+            <img src="./assets/images/birra-boca.jpg" alt="Cliente de el Social con una birra fría y una boca servida en la mesa de madera, contra la pared de ladrillo" loading="lazy" width="1120" height="1400">
+            <span class="badge-pill badge-coral experience-card-badge">MEDIODÍA</span>
+          </div>
+          <div class="experience-card-content">
+            <div class="experience-card-time">11:30 - 15:00 • Almuerzo</div>
+            <h3 class="experience-card-title">Una boca y una birra</h3>
+            <p class="experience-card-desc">
+              El almuerzo de siempre, bien hecho: casados con su gallo pinto y su picadillo, chifrijo de la casa
+              y bocas que alcanzan para dos. Se come rápido si andás con prisa y se conversa largo si no.
+            </p>
+            <div class="experience-card-items">
+              <span class="experience-tag">Casados</span>
+              <span class="experience-tag">Chifrijo</span>
+              <span class="experience-tag">Chicharrones</span>
+              <span class="experience-tag">Bocas del día</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Barra -->
+        <div class="experience-card card" data-category="barra">
+          <div class="experience-card-img-wrap">
+            <img src="./assets/images/terraza-mural.jpg" alt="Grupo de amigos en las mesas de afuera de el Social, frente al mural Pura Vida" loading="lazy" width="1051" height="1400">
+            <span class="badge-pill badge-sand experience-card-badge">TARDEADA</span>
+          </div>
+          <div class="experience-card-content">
+            <div class="experience-card-time">15:00 - 19:00 • Después del trabajo</div>
+            <h3 class="experience-card-title">Birra fría y mesa afuera</h3>
+            <p class="experience-card-desc">
+              La hora en que se llenan las bancas de la calle. Cerveza nacional a temperatura de verdad
+              desde ₡2.000, spritz para la tardeada y algo para picar mientras cae la tarde sobre el centro.
+            </p>
+            <div class="experience-card-items">
+              <span class="experience-tag">Imperial ₡2.000</span>
+              <span class="experience-tag">Aperol Spritz</span>
+              <span class="experience-tag">Bocas para picar</span>
+              <span class="experience-tag">After office</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Noche -->
+        <div class="experience-card card" data-category="noche">
+          <div class="experience-card-img-wrap">
+            <img src="./assets/images/brindis-patio.jpg" alt="Brindis de un grupo de amigos en el patio de el Social, de noche" loading="lazy" width="600" height="400">
+            <span class="badge-pill badge-wine experience-card-badge">NOCHE</span>
+          </div>
+          <div class="experience-card-content">
+            <div class="experience-card-time">19:00 - Cierre • Barra y música</div>
+            <h3 class="experience-card-title">Cocteles y buena compañía</h3>
+            <p class="experience-card-desc">
+              Se prenden las luces de la barra y salen los cocteles de la casa con guaro Cacique. Música que se
+              canta, mesas que se juntan solas y una barra que no apura a nadie.
+            </p>
+            <div class="experience-card-items">
+              <span class="experience-tag">Chepe Mula</span>
+              <span class="experience-tag">Tamarindo</span>
+              <span class="experience-tag">Tablazo de shots</span>
+              <span class="experience-tag">Negroni</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------------------------------------------------------------------
+           LA NOCHE DEL SOCIAL — lo que no está en ninguna carta
+           --------------------------------------------------------------------- -->
+      <div class="noche-block">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="badge-pill badge-wine">LA NOCHE DEL SOCIAL</span>
+          <h2 class="section-title">Lo que no aparece en la carta</h2>
+          <p class="section-description">
+            Tablazos, mascaradas y sabaditos que se estiran. Lo demás se cuenta solo.
+          </p>
+        </div>
+
+        <div class="noche-grid">
+          <article class="noche-card noche-card-afiche">
+            <img src="./assets/images/afiche-tablazo.webp" alt="Afiche del Tablazo de el Social: el nivel social se mide en shots" width="800" height="1000" loading="lazy">
+          </article>
+
+          <article class="noche-card noche-card-editorial">
+            <div class="noche-card-img">
+              <img src="./assets/images/mascarada.jpg" alt="Mascarada tradicional bailando entre las mesas de el Social un sábado por la noche" width="1119" height="1400" loading="lazy">
+            </div>
+            <div class="noche-card-texto">
+              <h3 class="noche-card-title">Sabadito alegre</h3>
+              <p>Las mascaradas dan la vuelta entre las mesas y la noche se estira hasta las cinco de la mañana.</p>
+            </div>
+          </article>
+
+          <article class="noche-card noche-card-editorial">
+            <div class="noche-card-img">
+              <img src="./assets/images/aplaudimos.jpg" alt="Clientas de el Social aplaudiendo y bailando junto a una mascarada" width="399" height="501" loading="lazy">
+            </div>
+            <div class="noche-card-texto">
+              <h3 class="noche-card-title">Aplaudimos y no juzgamos</h3>
+              <p>Cumpleaños, despedidas, ascensos o un martes cualquiera. Acá cualquier excusa sirve.</p>
+            </div>
+          </article>
+
+          <article class="noche-card noche-card-afiche">
+            <img src="./assets/images/afiche-bailado.webp" alt="Afiche de el Social: Ñadie me quita lo bailado" width="800" height="1000" loading="lazy">
+          </article>
+        </div>
+      </div>
+
+      <!-- ---------------------------------------------------------------------
+           LA CARTA DE LA BARRA (cartas reales + listas de precios)
+           --------------------------------------------------------------------- -->
+      <div class="carta-block">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="badge-pill badge-coral">LA CARTA</span>
+          <h2 class="section-title">De la barra a la mesa</h2>
+          <p class="section-description">
+            Todo con impuestos incluidos. Tocá cualquier carta para verla completa.
+          </p>
+        </div>
+
+        <div class="carta-grid">
+          <!-- Cartas reales, ampliables con el mismo lightbox de la galería -->
+          <div class="carta-cards">
+            <div class="gallery-card carta-card" data-full="./assets/images/carta-cocteles-social.webp" data-caption="Cocteles el Social • Hechos con guaro Cacique — impuestos incluidos" tabindex="0" role="button" aria-label="Ampliar carta: Cocteles el Social">
+              <img src="./assets/images/carta-cocteles-social.webp" alt="Carta de cocteles el Social con guaro Cacique: Tamarindo, Pisuicas, Cocles, Passiflora, Cadejo, Pelona, Don Juan y Chepe Mula" loading="lazy" width="319" height="413">
+              <div class="gallery-card-overlay">
+                <div class="gallery-card-title">Cocteles el Social</div>
+                <div class="gallery-card-tag">Hechos con Cacique</div>
+              </div>
+            </div>
+
+            <div class="gallery-card carta-card" data-full="./assets/images/carta-birras.webp" data-caption="Birras • Catorce cervezas en carta y artesanales a ₡3.500" tabindex="0" role="button" aria-label="Ampliar carta: birras">
+              <img src="./assets/images/carta-birras.webp" alt="Carta de birras de el Social: Imperial, Pilsen, Rock Ice, Bavaria, Heineken, Corona, Modelo, Stella Artois, Paulaner, Hoegarden, Carlsberg, Presidente, Guiness y Sol" loading="lazy" width="328" height="424">
+              <div class="gallery-card-overlay">
+                <div class="gallery-card-title">Birras</div>
+                <div class="gallery-card-tag">Catorce en carta</div>
+              </div>
+            </div>
+
+            <div class="gallery-card carta-card" data-full="./assets/images/carta-cocteles-clasicos.webp" data-caption="Clásicos, sodas italianas y mocktails — impuestos incluidos" tabindex="0" role="button" aria-label="Ampliar carta: clásicos, sodas italianas y mocktails">
+              <img src="./assets/images/carta-cocteles-clasicos.webp" alt="Carta de clásicos de el Social: Mojito, Aperol Spritz, Carajillo, Martini, Margarita, Sangría, Old Fashioned y Negroni, más sodas italianas y mocktails" loading="lazy" width="319" height="413">
+              <div class="gallery-card-overlay">
+                <div class="gallery-card-title">Clásicos &amp; sin alcohol</div>
+                <div class="gallery-card-tag">Sodas italianas y mocktails</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listas de precios -->
+          <div class="carta-listas">
+            <div class="carta-lista card">
+              <h3 class="carta-lista-title">Los de la casa <span class="carta-lista-note">con guaro Cacique</span></h3>
+              <ul class="precio-list">
+                <li class="precio-row">
+                  <span class="precio-nombre">Tamarindo <em>tamarindo, limón, sal</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Pisuicas <em>sirope de mango artesanal, chile habanero, limón</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Cocles <em>limón, sirope de coco, piña</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Passiflora <em>sirope de vainilla, maracuyá, limón</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Pelona <em>Smirnoff, frutos rojos, mora, limón, hierbabuena</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Cadejo <em>Captain Morgan, piña, limón, Cointreau</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.500</span>
+                </li>
+                <li class="precio-row precio-destacado">
+                  <span class="precio-nombre">Chepe Mula <em>cerveza de jengibre, limón, angostura</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡5.000</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Don Juan <em>Johnnie Walker Black, vino porto, gotas amargas</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡5.000</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="carta-lista card">
+              <h3 class="carta-lista-title">Birras <span class="carta-lista-note">nacionales e importadas</span></h3>
+              <ul class="precio-list">
+                <li class="precio-row precio-destacado">
+                  <span class="precio-nombre">Imperial <em>también Pilsen y Rock Ice</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡2.000</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Bavaria <em>y Presidente</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡2.400</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Heineken <em>Modelo, Carlsberg y Sol</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡2.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Corona</span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡2.600</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Stella Artois <em>y Paulaner</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡2.800</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Hoegaarden</span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡3.000</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Artesanales <em>preguntá por las del día</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡3.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Guiness</span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.900</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="carta-lista card">
+              <h3 class="carta-lista-title">Clásicos &amp; sin alcohol</h3>
+              <ul class="precio-list">
+                <li class="precio-row">
+                  <span class="precio-nombre">Mojito <em>y Aperol Spritz</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Margarita <em>con Don Julio + ₡2.000</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Old Fashioned <em>y Sangría</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Negroni</span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡5.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Carajillo</span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.000</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Copa de vino</span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡4.000</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Sodas italianas <em>mango, frutos silvestres, manzana verde</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡2.500</span>
+                </li>
+                <li class="precio-row">
+                  <span class="precio-nombre">Mocktails <em>limonada, mora, maracuyá, fresa</em></span>
+                  <span class="precio-punteo" aria-hidden="true"></span>
+                  <span class="precio-valor">₡2.300</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="carta-pie">
+          <span class="starburst-icon">✦</span>
+          Todos los precios llevan impuestos incluidos. Micheladas, shots, tablazos y bocas también en carta.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. GALERÍA (FOTOGRAFÍA REAL)
+       ========================================================================= -->
+  <section id="galeria" class="gallery-section section-gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-pill badge-coral">EL LUGAR</span>
+        <h2 class="section-title">Así se ve el Social</h2>
+        <p class="section-description">
+          La barra, las bancas de la calle, los sabaditos y las noches de neón en el centro de San José.
+        </p>
+      </div>
+
+      <!-- Responsive Masonry / Grid (12-col) -->
+      <div class="gallery-grid photo-gallery"><div class="gallery-card photo-card" data-full="./assets/images/bar-papel-picado.jpg" data-caption="Bajo el papel picado • El salón y la barra" tabindex="0" role="button" aria-label="Ampliar imagen: Bajo el papel picado">
+      <img src="./assets/images/bar-papel-picado.jpg" alt="Salón con papel picado, barra iluminada y pantallas" width="1200" height="1200" loading="lazy">
+      <div class="gallery-card-overlay"><div class="gallery-card-title">Bajo el papel picado</div><div class="gallery-card-tag">El salón y la barra</div></div>
+    </div><div class="gallery-card photo-card" data-full="./assets/images/terraza-mural.jpg" data-caption="Las bancas de la calle • Frente al mural Pura Vida" tabindex="0" role="button" aria-label="Ampliar imagen: Las bancas de la calle">
+      <img src="./assets/images/terraza-mural.jpg" alt="Grupo de amigos sentado en las bancas frente al mural Pura Vida" width="1051" height="1400" loading="lazy">
+      <div class="gallery-card-overlay"><div class="gallery-card-title">Las bancas de la calle</div><div class="gallery-card-tag">Frente al mural Pura Vida</div></div>
+    </div><div class="gallery-card photo-card" data-full="./assets/images/neon-noche.jpg" data-caption="La esquina de noche • El rótulo encendido" tabindex="0" role="button" aria-label="Ampliar imagen: La esquina de noche">
+      <img src="./assets/images/neon-noche.jpg" alt="Fachada de el Social de noche con rótulos luminosos" width="335" height="597" loading="lazy">
+      <div class="gallery-card-overlay"><div class="gallery-card-title">La esquina de noche</div><div class="gallery-card-tag">El rótulo encendido</div></div>
+    </div><div class="gallery-card photo-card" data-full="./assets/images/futbol-pantallas.jpg" data-caption="Fútbol entre amigos • Camisetas de Colombia" tabindex="0" role="button" aria-label="Ampliar imagen: Fútbol entre amigos">
+      <img src="./assets/images/futbol-pantallas.jpg" alt="Grupo con camisetas amarillas de Colombia alrededor de una mesa frente a un mural" width="387" height="516" loading="lazy">
+      <div class="gallery-card-overlay"><div class="gallery-card-title">Fútbol entre amigos</div><div class="gallery-card-tag">Camisetas de Colombia</div></div>
+    </div><div class="gallery-card photo-card" data-full="./assets/images/birra-boca.jpg" data-caption="Birra y boca • Una pausa en la mesa" tabindex="0" role="button" aria-label="Ampliar imagen: Birra y boca">
+      <img src="./assets/images/birra-boca.jpg" alt="Cliente tomando cerveza junto a un plato de comida sobre la mesa" width="1120" height="1400" loading="lazy">
+      <div class="gallery-card-overlay"><div class="gallery-card-title">Birra y boca</div><div class="gallery-card-tag">Una pausa en la mesa</div></div>
+    </div><div class="gallery-card photo-card" data-full="./assets/images/brindis-patio.jpg" data-caption="El brindis • Todas las manos al centro" tabindex="0" role="button" aria-label="Ampliar imagen: El brindis">
+      <img src="./assets/images/brindis-patio.jpg" alt="Grupo de amigos brindando alrededor de una mesa, visto desde arriba" width="600" height="400" loading="lazy">
+      <div class="gallery-card-overlay"><div class="gallery-card-title">El brindis</div><div class="gallery-card-tag">Todas las manos al centro</div></div>
+    </div><div class="gallery-card photo-card" data-full="./assets/images/esquina-atardecer.jpg" data-caption="La esquina al atardecer • Cuando se prenden las luces" tabindex="0" role="button" aria-label="Ampliar imagen: La esquina al atardecer">
+      <img src="./assets/images/esquina-atardecer.jpg" alt="Fachada azul en una esquina con un tuk tuk rojo estacionado enfrente" width="500" height="280" loading="lazy">
+      <div class="gallery-card-overlay"><div class="gallery-card-title">La esquina al atardecer</div><div class="gallery-card-tag">Cuando se prenden las luces</div></div>
+    </div><div class="gallery-card photo-card" data-full="./assets/images/rotulo-espejo.jpg" data-caption="El espejo de la entrada • De día" tabindex="0" role="button" aria-label="Ampliar imagen: El espejo de la entrada">
+      <img src="./assets/images/rotulo-espejo.jpg" alt="Espejo redondo con el logotipo de el Social y el texto De día sobre una pared de ladrillo" width="335" height="597" loading="lazy">
+      <div class="gallery-card-overlay"><div class="gallery-card-title">El espejo de la entrada</div><div class="gallery-card-tag">De día</div></div>
+    </div></div>
+
+      <!-- Lightbox Modal Container -->
+      <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Visor ampliado de galería">
+        <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+          <button id="lightbox-close" class="lightbox-close lightbox-close-btn" aria-label="Cerrar">&times;</button>
+          <div class="lightbox-img-wrap">
+            <img id="lightbox-img" class="lightbox-img" src="./assets/images/bar-papel-picado.jpg" alt="Vista ampliada" loading="lazy">
+          </div>
+          <div class="lightbox-caption-bar">
+            <div id="lightbox-caption" class="lightbox-caption lightbox-caption-text">Bajo el papel picado</div>
+          </div>
+          <div class="gallery-controls" aria-label="Navegación de imágenes">
+            <button type="button" id="gallery-prev" aria-label="Imagen anterior">←</button>
+            <span id="gallery-position" role="status" aria-live="polite" aria-atomic="true">1 / 8</span>
+            <button type="button" id="gallery-next" aria-label="Imagen siguiente">→</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="campaigns-block">
+        <div class="section-header"><span class="badge-pill badge-navy">CAMPAÑAS DE LA CASA</span>
+        <h3 class="section-title">Así habla el Social</h3>
+        <p class="section-description">Piezas de coctelería, celebraciones y tardeadas. Tocá una imagen para ver el diseño completo.</p></div>
+        <div class="campaigns-grid"><div class="gallery-card campaign-card" data-full="./assets/images/coctel-ciudad.jpg" data-caption="Coctelería de la casa • Campaña de cocteles" tabindex="0" role="button" aria-label="Ampliar imagen: Coctelería de la casa">
+      <img src="./assets/images/coctel-ciudad.jpg" alt="Pieza de coctelería con una clienta sosteniendo un coctel naranja y texto impreso en la parte inferior" width="1120" height="1400" loading="lazy">
+      <div class="gallery-card-overlay"><div class="gallery-card-title">Coctelería de la casa</div><div class="gallery-card-tag">Campaña de cocteles</div></div>
+    </div><div class="gallery-card campaign-card" data-full="./assets/images/celebra.jpg" data-caption="Celebrá • Campaña de celebraciones" tabindex="0" role="button" aria-label="Ampliar imagen: Celebrá">
+      <img src="./assets/images/celebra.jpg" alt="Pieza Celebrá entre chicas y coctelitos: amigas se toman una selfie con un queque" width="1120" height="1400" loading="lazy">
+      <div class="gallery-card-overlay"><div class="gallery-card-title">Celebrá</div><div class="gallery-card-tag">Campaña de celebraciones</div></div>
+    </div><div class="gallery-card campaign-card" data-full="./assets/images/chicas-tardeamos.jpg" data-caption="¿Chicas, tardeamos? • Campaña de Morazán" tabindex="0" role="button" aria-label="Ampliar imagen: ¿Chicas, tardeamos?">
+      <img src="./assets/images/chicas-tardeamos.jpg" alt="Pieza de tardeada en el Social Morazán con dos clientas sosteniendo cocteles" width="1120" height="1400" loading="lazy">
+      <div class="gallery-card-overlay"><div class="gallery-card-title">¿Chicas, tardeamos?</div><div class="gallery-card-tag">Campaña de Morazán</div></div>
+    </div></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Ensure all lazy images load cleanly in headless automation environments
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        img.loading = 'eager';
+      });
+    });
+  </script>
+
+  <!-- =========================================================================
+       8. SEDES, HORARIOS & RESEÑAS
+       ========================================================================= -->
+  <section id="horarios" class="schedule-section section-hours">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-pill badge-sand">DÓNDE ESTAMOS</span>
+        <h2 class="section-title">Dos sedes, la misma vara</h2>
+        <p class="section-description">
+          el Social tiene dos casas en San José. Misma carta, mismo trato, mismo papel picado en el techo.
+        </p>
+      </div>
+
+      <!-- Sedes -->
+      <div class="sedes-grid">
+        <div class="sede-card card">
+          <div class="sede-card-img">
+            <img src="./assets/images/fachada-morazan.jpg" alt="Fachada azul de el Social, sede Morazán, junto al mural Pura Vida" loading="lazy" width="554" height="554">
+            <span class="sede-sello" aria-hidden="true">
+              <img src="./assets/images/sello-reservas.png" alt="" width="140" height="140" loading="lazy">
+            </span>
+          </div>
+          <div class="sede-card-body">
+            <span class="badge-pill badge-navy">SEDE</span>
+            <h3 class="sede-card-title">Morazán</h3>
+            <p class="sede-card-desc">Costado este del Parque Morazán, San José centro. La fachada azul junto al mural, con bancas afuera.</p>
+            <a class="sede-card-link" href="https://www.google.com/maps/search/?api=1&amp;query=el+Social+Moraz%C3%A1n+San+Jos%C3%A9" target="_blank" rel="noopener">Cómo llegar →</a>
+          </div>
+        </div>
+
+        <div class="sede-card card">
+          <div class="sede-card-img">
+            <img src="./assets/images/entrada-sabana.jpg" alt="Entrada de el Social, sede Sabana" loading="lazy" width="447" height="447">
+          </div>
+          <div class="sede-card-body">
+            <span class="badge-pill badge-navy">SEDE</span>
+            <h3 class="sede-card-title">Sabana</h3>
+            <p class="sede-card-desc">La Sabana, San José. Entrada amplia, mesas largas para grupos y parqueo cerca.</p>
+            <a class="sede-card-link" href="https://www.google.com/maps/search/?api=1&amp;query=el+Social+Sabana+San+Jos%C3%A9" target="_blank" rel="noopener">Cómo llegar →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="schedule-grid">
+        <!-- Schedule Table Card -->
+        <div class="schedule-card card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+            <h3 class="h3" style="margin: 0;">Horarios</h3>
+            <span class="badge-pill badge-coral">Abierto hoy • Te esperamos</span>
+          </div>
+
+          <p class="text-muted" style="font-size: 0.92rem; margin-bottom: 1.5rem;">
+            La cocina atiende hasta una hora antes del cierre. La barra, hasta que se vaya el último.
+          </p>
+
+          <table id="hours-table" class="schedule-table" style="width: 100%; border-collapse: collapse;">
+            <tbody>
+              <tr class="schedule-row">
+                <td class="schedule-day">Lunes – Miércoles</td>
+                <td class="schedule-time">11:30 – 23:00</td>
+              </tr>
+              <tr class="schedule-row">
+                <td class="schedule-day">Jueves – Viernes</td>
+                <td class="schedule-time">
+                  <strong>11:30 – 02:00</strong>
+                  <span style="display: block; font-size: 0.78rem; color: var(--color-text-muted);">Barra hasta tarde &amp; música</span>
+                </td>
+              </tr>
+              <tr class="schedule-row">
+                <td class="schedule-day">Sábado</td>
+                <td class="schedule-time">
+                  <strong class="schedule-highlight">11:30 – 05:00</strong>
+                  <span style="display: block; font-size: 0.78rem; color: var(--color-text-muted);">Sabadito alegre &amp; mascaradas</span>
+                </td>
+              </tr>
+              <tr class="schedule-row">
+                <td class="schedule-day">Domingo</td>
+                <td class="schedule-time">
+                  <strong>11:30 – 20:00</strong>
+                  <span style="display: block; font-size: 0.78rem; color: var(--color-text-muted);">Almuerzo y fútbol en pantalla</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--color-border-subtle); display: flex; align-items: center; gap: 0.75rem;">
+            <span class="starburst-icon" style="color: var(--color-brand-coral);">✦</span>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0;">
+              Grupos y cumpleaños con reserva previa • Pantallas para los partidos • Se aceptan tarjetas y SINPE.
+            </p>
+          </div>
+        </div>
+
+        <!-- Community Reviews Cards — reseñas de muestra para la propuesta visual -->
+        <div class="reviews-grid">
+          <div class="review-card card review">
+            <div class="review-stars" aria-label="Calificación 5 de 5 estrellas">★★★★★</div>
+            <blockquote class="review-text">
+              "Pedimos un tablazo entre cuatro y terminamos aplaudiéndole a una mascarada. La barra sabe lo que hace y el precio no asusta."
+            </blockquote>
+            <div class="review-author">
+              <div class="review-avatar">DC</div>
+              <div>
+                <div class="review-name">Daniela Chaves</div>
+                <div class="review-source">Vecina de Barrio Morazán</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card card review">
+            <div class="review-stars" aria-label="Calificación 5 de 5 estrellas">★★★★★</div>
+            <blockquote class="review-text">
+              "Vengo por el almuerzo del mediodía y me quedo por la birra de la tarde en las bancas de afuera. El chifrijo es de los mejores del centro."
+            </blockquote>
+            <div class="review-author">
+              <div class="review-avatar">RM</div>
+              <div>
+                <div class="review-name">Randall Mora</div>
+                <div class="review-source">Cliente de siempre</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card card review">
+            <div class="review-stars" aria-label="Calificación 5 de 5 estrellas">★★★★★</div>
+            <blockquote class="review-text">
+              "Llegamos ocho un sábado sin reservar y nos acomodaron. Papel picado, música y nadie apurándote para que te vayás."
+            </blockquote>
+            <div class="review-author">
+              <div class="review-avatar">KU</div>
+              <div>
+                <div class="review-name">Kimberly Ureña</div>
+                <div class="review-source">Cumpleaños en sede Sabana</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. RESERVAS & CONTACTO
+       ========================================================================= -->
+  <section id="reserva" class="reservation-section section-reservation">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-pill badge-wine">RESERVAS</span>
+        <h2 class="section-title">Apartá tu mesa</h2>
+        <p class="section-description">
+          Para grupos, cumpleaños, after office o simplemente para asegurar campo un sábado.
+          Contanos y te confirmamos.
+        </p>
+      </div>
+
+      <div class="reservation-container">
+        <!-- Reservation Form Wrap -->
+        <div class="reservation-form-wrap">
+          <h3 class="h3" style="margin-bottom: 0.5rem; color: var(--color-brand-navy);">Solicitud de Reserva</h3>
+          <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Completá tus datos y te escribimos por WhatsApp para confirmar.
+          </p>
+
+          <form id="reservation-form" class="reservation-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="res-name" class="form-label">Nombre Completo *</label>
+                <input type="text" id="res-name" name="name" class="form-control" required placeholder="Ej. Andrea Solano">
+                <div class="form-error">Por favor ingresá tu nombre completo.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="res-phone" class="form-label">Teléfono / WhatsApp *</label>
+                <input type="tel" id="res-phone" name="phone" class="form-control" required placeholder="+506 8888-9999">
+                <div class="form-error">Por favor ingresá un número de contacto válido.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="res-email" class="form-label">Correo Electrónico *</label>
+                <input type="email" id="res-email" name="email" class="form-control" required placeholder="andrea@ejemplo.com">
+                <div class="form-error">Ingresá un correo electrónico válido.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="res-date" class="form-label">Fecha Deseada *</label>
+                <input type="date" id="res-date" name="date" class="form-control" required>
+                <div class="form-error">Seleccioná una fecha para tu visita.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="res-sede" class="form-label">Sede</label>
+                <select id="res-sede" name="sede" class="form-control">
+                  <option value="morazan">el Social Morazán</option>
+                  <option value="sabana">el Social Sabana</option>
+                  <option value="cualquiera">La que tenga campo</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="res-shift" class="form-label">Momento</label>
+                <select id="res-shift" name="shift" class="form-control">
+                  <option value="almuerzo">Almuerzo (11:30 - 15:00)</option>
+                  <option value="tardeada">Tardeada &amp; after office (15:00 - 19:00)</option>
+                  <option value="noche" selected>Noche &amp; barra (19:00 - Cierre)</option>
+                  <option value="evento">Cumpleaños o evento privado</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="res-guests" class="form-label">Número de Personas</label>
+                <select id="res-guests" name="guests" class="form-control">
+                  <option value="1">1 persona (en la barra)</option>
+                  <option value="2" selected>2 personas</option>
+                  <option value="3">3 personas</option>
+                  <option value="4">4 personas</option>
+                  <option value="5-6">5 a 6 personas</option>
+                  <option value="7+">7 a 8+ personas (mesa larga)</option>
+                </select>
+              </div>
+
+              <div class="form-group form-group-full">
+                <button type="submit" id="res-submit" class="btn btn-primary" style="width: 100%;">
+                  Enviar Solicitud de Reserva
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Reservation Info & Contact Wrap -->
+        <div class="reservation-info-wrap">
+          <div>
+
+            <span class="badge-pill badge-coral" style="align-self: flex-start; margin-bottom: 1.25rem;">SABANA &amp; MORAZÁN</span>
+            <h3 class="h3 text-white" style="margin-bottom: 1rem;">Siempre hay campo en el Social</h3>
+            <p class="text-cream" style="opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+              Un almuerzo rápido entre semana, la birra de la tarde con la oficina o un sabadito que se
+              estira hasta las cinco: decinos cuándo y cuántos son, y te dejamos la mesa lista.
+            </p>
+
+            <!-- Contact Information Details -->
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--color-brand-coral); flex-shrink: 0;" aria-hidden="true">📍</div>
+                <div>
+                  <strong class="text-white" style="display: block; font-size: 0.95rem;">Nuestras sedes</strong>
+                  <span class="text-cream" style="font-size: 0.88rem; opacity: 0.85;">Morazán — costado este del Parque Morazán, San José<br>Sabana — La Sabana, San José</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--color-brand-coral); flex-shrink: 0;" aria-hidden="true">📞</div>
+                <div>
+                  <strong class="text-white" style="display: block; font-size: 0.95rem;">Teléfono</strong>
+                  <a href="tel:+50622223333" class="text-cream" style="font-size: 0.88rem; opacity: 0.85; text-decoration: underline;">+506 2222-3333</a>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--color-brand-coral); flex-shrink: 0;" aria-hidden="true">💬</div>
+                <div>
+                  <strong class="text-white" style="display: block; font-size: 0.95rem;">WhatsApp</strong>
+                  <a href="https://wa.me/50688889999" target="_blank" rel="noopener" class="text-cream" style="font-size: 0.88rem; opacity: 0.85; text-decoration: underline;">+506 8888-9999</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Action Buttons -->
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2rem;">
+            <a href="https://wa.me/50688889999" target="_blank" rel="noopener" class="btn btn-outline-white" style="width: 100%; justify-content: center;">
+              Escribinos por WhatsApp
+            </a>
+            <a href="tel:+50622223333" class="btn btn-outline-white" style="width: 100%; justify-content: center;">
+              Llamar al Social
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Feedback Notification Container -->
+      <div id="reservation-toast" class="toast-notification" aria-live="polite" role="status">
+        <span style="font-size: 1.25rem;">🍻</span>
+        <div>
+          <strong style="display: block; font-size: 0.95rem;">¡Solicitud de reserva recibida!</strong>
+          <span style="font-size: 0.85rem; opacity: 0.9;">Demostración: el formulario todavía no envía datos. En la versión final te escribimos por WhatsApp para confirmar.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. FOOTER LANDMARK (#contacto / footer)
+       ========================================================================= -->
+  <footer id="contacto" class="site-footer footer">
+    <div id="footer" class="container">
+      <div class="brand-goodbye">
+        <div class="goodbye-meta"><span>LAS MEJORES HISTORIAS EMPIEZAN CON UN</span><a href="#hero" aria-label="Volver al inicio">Volvamos arriba <span aria-hidden="true">↑</span></a></div>
+        <a href="#reserva" class="goodbye-invitation" aria-label="¿Nos vemos? Reservar una mesa"><span>¿Nos</span> <em>vemos?</em><span class="goodbye-star" aria-hidden="true">✳</span></a>
+        <div class="goodbye-bottom"><span>La próxima ronda empieza con vos.</span><a href="#reserva">Apartá tu mesa <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="footer-grid">
+        <!-- Col 1: Brand manifesto & Logo -->
+        <div class="footer-brand">
+          <a href="#hero" aria-label="Ir al inicio de el Social">
+            <div class="logo-badge" style="display: inline-flex; margin-bottom: 1.25rem;">
+              <img src="./assets/images/logo.png" alt="el Social Logo" class="logo-img" style="height: 38px; width: auto;" loading="lazy">
+            </div>
+          </a>
+          <p>
+            Bar y restaurante en el corazón de Chepe. Cocteles con guaro Cacique, tablazos de shots,
+            birra fría y bocas para compartir. De día cocina, de noche la casa de los más Sociales.
+          </p>
+          <div style="margin-top: 1.25rem;">
+            <span class="badge-pill badge-sand">SABANA &amp; MORAZÁN • SAN JOSÉ • COSTA RICA</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Navegación</h4>
+          <div class="footer-links">
+            <a href="#hero" class="footer-link">Inicio</a>
+            <a href="#historia" class="footer-link">Nuestra Historia</a>
+            <a href="#experiencias" class="footer-link">La Carta</a>
+            <a href="#galeria" class="footer-link">Galería</a>
+            <a href="#horarios" class="footer-link">Sedes &amp; Horarios</a>
+            <a href="#reserva" class="footer-link">Reservar Mesa</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Contact & Social Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Contacto Directo</h4>
+          <div class="footer-links">
+            <p class="footer-link" style="margin-bottom: 0.25rem;">Costado este del Parque Morazán</p>
+            <a href="tel:+50622223333" class="footer-link">+506 2222-3333</a>
+            <a href="https://wa.me/50688889999" target="_blank" rel="noopener" class="footer-link">WhatsApp: +506 8888-9999</a>
+            <a href="mailto:hola@elsocialcr.com" class="footer-link">hola@elsocialcr.com</a>
+          </div>
+
+          <div class="footer-social-links">
+            <a href="https://instagram.com/elsocialcr" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram de el Social">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+            <a href="https://wa.me/50688889999" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp de el Social">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c0-5.445 4.436-9.88 9.888-9.88a9.82 9.82 0 0 1 6.988 2.898 9.82 9.82 0 0 1 2.893 6.99c-.003 5.446-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413Z"/></svg>
+            </a>
+            <a href="https://facebook.com/elsocialcr" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook de el Social">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="footer-col">
+          <h4 class="footer-heading">La lista del Social</h4>
+          <p style="font-size: 0.88rem; color: var(--color-surface-sand-dark); margin-bottom: 1rem; line-height: 1.5;">
+            Enterate primero de las promos, los partidos en pantalla grande y los sabaditos con mascarada.
+          </p>
+          <form id="newsletter-form" class="footer-newsletter-form">
+            <input type="email" name="newsletter_email" class="footer-newsletter-input" placeholder="Tu correo electrónico" required aria-label="Correo para la lista de el Social">
+            <button type="submit" class="btn btn-primary btn-sm">Anotarme</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 el Social. Todos los derechos reservados. San José, Costa Rica.</p>
+        <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+          <a href="#hero" class="footer-link" style="font-size: 0.85rem;">Privacidad</a>
+          <a href="#hero" class="footer-link" style="font-size: 0.85rem;">Términos</a>
+          <span style="font-size: 0.85rem; color: var(--color-brand-coral);">Ñadie me quita lo bailado</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

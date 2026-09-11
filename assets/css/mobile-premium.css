@@ -1,0 +1,110 @@
+/* Mobile art direction: compact, touch-first and editorial. */
+@media (max-width: 1024px) {
+  html { scroll-padding-top: 82px; }
+  .header-sticky { z-index: 100; }
+  .header-sticky .nav-container { min-height: 70px; }
+  .header-sticky .logo-badge { border-radius: 10px; }
+  .header-sticky .logo-img { object-fit: contain; }
+  .mobile-menu-btn { width: 44px; height: 44px; border-radius: 10px; border: 1px solid #1838702b; background: #fff8ed; box-shadow: 0 5px 16px #1838701c; }
+  .mobile-menu-btn span { width: 20px; background: #183870; }
+  .mobile-drawer { width: min(88vw, 360px); border-left: 1px solid #f8efdc55; box-shadow: -18px 0 60px #0e234744; }
+  .drawer-link { font-family: var(--font-display); font-size: 1.55rem; letter-spacing: -.03em; }
+  .drawer-link::after { font-family: var(--font-body); font-size: .7rem; }
+  .hero-section { min-height: auto; padding-top: calc(var(--header-height) + 2rem); padding-bottom: 4.5rem; }
+  .hero-content { width: 100%; }
+  .hero-title { font-size: clamp(3rem, 12vw, 4.7rem); line-height: .95; letter-spacing: -.06em; }
+  .hero-line { color: #fff; }
+  .hero-word { margin-top: .12em; }
+  .hero-dark .hero-title .script-accent { display: block; font-size: clamp(1.05rem, 4vw, 1.4rem); line-height: 1.25; margin-top: 1.3rem; }
+  .hero-lead { font-size: .92rem; line-height: 1.7; }
+  .hero-actions { margin-bottom: 1rem; }
+  .hero-actions .btn { min-height: 52px; }
+  .hero-collage { width: min(94%, 430px); height: 385px; margin-top: 3.2rem; margin-bottom: 1.8rem; }
+  .social-photo { box-shadow: 0 14px 32px #0005; }
+  .social-photo-main { width: 80%; height: 310px; right: 4%; top: 12px; }
+  .social-photo-small { width: 49%; height: 190px; left: -2%; bottom: 0; }
+  .social-photo figcaption { font-size: .5rem; }
+  .social-photo-small figcaption { font-size: .95rem; }
+  .social-stamp { width: 98px; height: 98px; right: -1%; bottom: 2%; gap: 6px; }
+  .social-stamp b { font-size: 1.05rem; }
+  .social-stamp span { font-size: .35rem; }
+  .collage-note { top: -25px; left: 6%; font-size: 1.25rem; }
+  .hero-pillars-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem .4rem; margin-top: 2rem; padding-top: 1.2rem; }
+  .pillar-item { min-width: 0; }
+  .pillar-text { font-size: .69rem; line-height: 1.2; }
+  .pillar-icon { width: 34px; height: 34px; }
+  .hero-content > div:last-child { margin-top: 2rem !important; }
+  .hero-dark .hero-scroll-cue { font-size: .75rem !important; }
+  .frases-banda { margin-bottom: 0; }
+  .frases-pista { gap: 1rem; }
+  .frase { font-size: 1.1rem; }
+  .social-planner { padding: 4.5rem 0 5.5rem; }
+  .planner-grid { gap: 2rem; }
+  .planner-copy h2 { font-size: clamp(2.8rem, 12vw, 4.3rem); margin: 1.2rem 0; }
+  .moment-switch { margin-top: 1.7rem; }
+  .moment-switch button { min-height: 58px; padding: .8rem .5rem; }
+  .moment-switch button span { font-size: 1.1rem; }
+  .moment-stage { max-width: 480px; }
+  .moment-photos { border-radius: 105px 105px 8px 8px; }
+  .moment-ticket { margin-top: 1.2rem; width: 93%; }
+  .ticket-content h3 { font-size: 2.2rem; }
+  .story-grid, .schedule-grid, .reservation-container { gap: 2rem; }
+  .section-header { margin-bottom: 2rem; }
+  .section-title { font-size: clamp(2.3rem, 9vw, 3.4rem); }
+  .value-card, .experience-card, .sede-card, .schedule-card, .reservation-form-wrap { border-radius: 14px; }
+  .photo-gallery .photo-card img { max-height: 360px; }
+  .photo-gallery .gallery-card-overlay { min-height: 76px; }
+  .campaigns-block { margin-top: 3.5rem; }
+  .campaigns-grid { gap: 1.2rem; }
+  .campaigns-grid .gallery-card { border-radius: 8px; }
+  .sede-card-img { min-height: 230px; }
+  .sede-card-img > img { max-height: 280px; }
+  .hours-table { border-radius: 12px; overflow: hidden; }
+  .hours-row { min-height: 64px; }
+  .reservation-form-wrap, .reservation-info-wrap { padding: 1.35rem; }
+  .form-control { min-height: 50px; border-radius: 8px; }
+  .reservation-form .btn { min-height: 54px; }
+  .brand-goodbye { margin-top: 1rem; }
+  .motion-toggle { bottom: calc(10px + env(safe-area-inset-bottom)); right: 10px; min-height: 32px; padding: 7px 10px; font-size: 10px; opacity: .95; }
+  .motion-toggle .motion-label { max-width: 0; overflow: hidden; white-space: nowrap; transition: max-width .3s ease; }
+  .motion-toggle:hover .motion-label, .motion-toggle:focus-visible .motion-label { max-width: 130px; }
+  body { padding-bottom: 0; }
+}
+@media (max-width: 600px) {
+  .nav-container { padding-inline: 1rem; }
+  .hero-section { padding-top: calc(var(--header-height) + 1.6rem); }
+  .hero-badge-wrap { margin-bottom: .8rem; }
+  .hero-title { margin-bottom: 1.3rem; }
+  .hero-lead br { display: none; }
+  .hero-collage { margin-top: 2.7rem; }
+  .hero-pillars-strip { gap: 1rem .3rem; }
+  .pillar-text { font-size: .64rem; }
+  .pillar-icon { width: 31px; height: 31px; }
+  .gallery-grid.photo-gallery { grid-template-columns: minmax(0,1fr); }
+  .photo-gallery .photo-card img { width: 100%; height: auto; max-height: none; }
+  .photo-gallery .gallery-card-overlay { min-height: 72px; }
+  .campaigns-grid { grid-template-columns: minmax(0,1fr); }
+  .sede-card { grid-template-columns: 1fr; }
+  .sede-card-img { min-height: 190px; }
+  .sede-card-body { padding: 1.1rem; }
+  .hours-row { gap: .6rem; }
+  .hours-day, .hours-time { font-size: .78rem; }
+  .brand-goodbye { padding-bottom: 3rem; margin-bottom: 3rem; }
+  .goodbye-invitation { font-size: clamp(2.8rem, 13vw, 4.4rem); }
+}
+@media (max-width: 380px) {
+  .hero-title { font-size: 2.8rem; }
+  .hero-collage { width: 100%; height: 340px; }
+  .social-photo-main { height: 270px; }
+  .social-photo-small { height: 170px; }
+  .social-stamp { width: 86px; height: 86px; }
+  .social-stamp b { font-size: .9rem; }
+  .hero-pillars-strip { grid-template-columns: 1fr 1fr; }
+  .pillar-icon { width: 27px; height: 27px; }
+  .pillar-text { font-size: .58rem; }
+  .ticket-content h3 { font-size: 1.95rem; }
+  .ticket-content p { font-size: .72rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-toggle { transition: none; }
+}

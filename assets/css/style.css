@@ -1,0 +1,2245 @@
+/* ==========================================================================
+   EL SOCIAL - BESPOKE MODERN RETRO-CHIC DESIGN SYSTEM & STYLESHEET
+   Brand: "el Social" (Café de especialidad, bistró retro y club cultural)
+   Derived from official logo reference media_1789072263393.png
+   WCAG 2.1 AAA/AA Verified Palette & Responsive Clamp Typography
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GOOGLE FONTS IMPORT
+   - Fraunces: Editorial vintage 3D/serif display
+   - Satisfy: Warm casual handwritten script mirroring "el" logo mark
+   - Plus Jakarta Sans: High-legibility modern sans-serif body copy
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600;1,9..144,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Satisfy&display=swap');
+
+/* --------------------------------------------------------------------------
+   2. DESIGN TOKENS (:root)
+   -------------------------------------------------------------------------- */
+:root {
+  /* --- Brand Core Chromatic Palette (Exact Logo Extraction) --- */
+  --color-brand-coral: #F05A40;          /* Dominant vermilion / coral rojizo */
+  --color-brand-coral-hover: #FF7056;    /* Interactive hover state */
+  --color-brand-coral-dark: #D6432B;     /* Active / pressed state */
+  --color-brand-coral-text: #C8442A;     /* Accessible text variant (4.62:1 on cream) */
+  --color-brand-coral-soft: #FDEEEB;     /* Tinted warm coral pill / badge background */
+  --color-brand-coral-glow: rgba(240, 90, 64, 0.28);
+
+  --color-brand-navy: #183870;           /* Midnight Navy Blue ("el" & underline) */
+  --color-brand-navy-deep: #0E2347;      /* Darkest navy for footers / dark sections */
+  --color-brand-navy-light: #2B4E91;     /* Interactive navy hover */
+  --color-brand-navy-soft: #EBF1FA;      /* Subtle soft blue badge background */
+
+  --color-brand-wine: #8C1824;           /* Deep crimson / vintage brick wine shadow */
+  --color-brand-wine-dark: #631019;      /* Dark 3D bevel / extrusion edge */
+  --color-brand-wine-soft: #F9EBED;      /* Delicate rose wine tint */
+
+  /* --- Neutrals & Background Surfaces --- */
+  --color-surface-cream: #FDF8F5;        /* Primary page canvas (warm analog paper) */
+  --color-surface-sand: #F4EAE1;         /* Secondary panel / section background */
+  --color-surface-sand-dark: #E1C5B5;    /* Piercing ray accent / border highlight */
+  --color-surface-white: #FFFFFF;        /* Pure white for elevated cards and modals */
+  --color-surface-glass: rgba(253, 248, 245, 0.88); /* Translucent header surface */
+
+  /* --- Text & Semantic Content Colors --- */
+  --color-text-primary: #183870;         /* Primary headings and brand statements (Navy) */
+  --color-text-body: #232936;            /* High-legibility charcoal body copy */
+  --color-text-muted: #647087;           /* Supporting metadata, timestamps, captions */
+  --color-text-inverse: #FFFFFF;         /* White text on dark navy or coral surfaces */
+  --color-border-subtle: #E8DCD2;        /* Subtle warm dividers */
+  --color-border-focus: #F05A40;         /* Accessible form focus ring */
+
+  /* --- Typography Font Stacks --- */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-script: 'Satisfy', 'Brush Script MT', cursive;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* --- Shadows & Atmospheric Elevation --- */
+  --shadow-xs: 0 1px 2px rgba(24, 56, 112, 0.05);
+  --shadow-sm: 0 2px 4px rgba(24, 56, 112, 0.06), 0 1px 2px rgba(24, 56, 112, 0.04);
+  --shadow-card: 0 4px 20px -2px rgba(24, 56, 112, 0.08), 0 2px 6px -1px rgba(24, 56, 112, 0.04);
+  --shadow-elevated: 0 16px 36px -6px rgba(24, 56, 112, 0.12), 0 6px 16px -3px rgba(140, 24, 36, 0.06);
+  --shadow-glow-coral: 0 0 24px -2px rgba(240, 90, 64, 0.35);
+  --shadow-glow-navy: 0 0 24px -2px rgba(24, 56, 112, 0.30);
+  --shadow-modal: 0 25px 50px -12px rgba(14, 35, 71, 0.35);
+
+  /* --- Border Radii --- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* --- Layout & Spatial Metrics --- */
+  --container-max-width: 1240px;
+  --container-padding: clamp(1rem, 4vw, 2.5rem);
+  --header-height: 80px;
+
+  /* --- Transitions & Timing Curves --- */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* --------------------------------------------------------------------------
+   3. CSS RESET & GLOBAL BASE STYLES
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1.5rem);
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-surface-cream);
+  color: var(--color-text-body);
+  line-height: 1.65;
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Skip-to-content accessibility link (WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 10000;
+  background: var(--color-brand-coral);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: top var(--transition-fast);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 3px solid var(--color-brand-navy);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. TYPOGRAPHY SYSTEM & CLAMP SCALES
+   -------------------------------------------------------------------------- */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw + 1rem, 4.25rem);
+  line-height: 1.12;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.5vw + 0.5rem, 3rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.015em;
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw + 0.35rem, 1.85rem);
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+h4, .h4 {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.5vw + 0.2rem, 1.45rem);
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.script-accent, .font-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-brand-coral);
+}
+
+.text-lead {
+  font-size: clamp(1.05rem, 1.2vw + 0.3rem, 1.25rem);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-coral {
+  color: var(--color-brand-coral-text);
+}
+
+.text-navy {
+  color: var(--color-brand-navy);
+}
+
+.text-wine {
+  color: var(--color-brand-wine);
+}
+
+.text-cream {
+  color: var(--color-surface-cream);
+}
+
+.text-white {
+  color: var(--color-surface-white);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --------------------------------------------------------------------------
+   5. REUSABLE UI COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-narrow {
+  max-width: 860px;
+}
+
+.container-fluid {
+  max-width: 100%;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.85rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  line-height: 1.2;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--color-brand-coral);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(240, 90, 64, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brand-coral-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-coral);
+  color: #FFFFFF;
+}
+
+.btn-primary:active {
+  background-color: var(--color-brand-coral-dark);
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--color-brand-navy);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(24, 56, 112, 0.25);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-brand-navy-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-navy);
+  color: #FFFFFF;
+}
+
+.btn-secondary:active {
+  background-color: var(--color-brand-navy-deep);
+  transform: translateY(0);
+}
+
+.btn-outline {
+  border-color: var(--color-brand-navy);
+  color: var(--color-brand-navy);
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-brand-navy);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-outline-coral {
+  border-color: var(--color-brand-coral);
+  color: var(--color-brand-coral-text);
+  background-color: transparent;
+}
+
+.btn-outline-coral:hover {
+  background-color: var(--color-brand-coral);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  border-color: rgba(255, 255, 255, 0.85);
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+.btn-outline-white:hover {
+  background-color: #FFFFFF;
+  color: var(--color-brand-navy);
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 1.05rem 2.25rem;
+  font-size: 1.05rem;
+}
+
+.btn-sm {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+/* --- Badges & Pills --- */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 1.15rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+.badge-coral {
+  background-color: var(--color-brand-coral-soft);
+  color: var(--color-brand-coral-text);
+  border: 1px solid rgba(240, 90, 64, 0.22);
+}
+
+.badge-navy {
+  background-color: var(--color-brand-navy-soft);
+  color: var(--color-brand-navy);
+  border: 1px solid rgba(24, 56, 112, 0.18);
+}
+
+.badge-wine {
+  background-color: var(--color-brand-wine-soft);
+  color: var(--color-brand-wine);
+  border: 1px solid rgba(140, 24, 36, 0.18);
+}
+
+.badge-sand {
+  background-color: var(--color-surface-sand);
+  color: var(--color-brand-navy);
+  border: 1px solid var(--color-surface-sand-dark);
+}
+
+/* --- Cards --- */
+.card {
+  background-color: var(--color-surface-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-subtle);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.card-sand {
+  background-color: var(--color-surface-sand);
+}
+
+.card-navy {
+  background-color: var(--color-brand-navy-deep);
+  color: var(--color-surface-cream);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.card-body {
+  padding: clamp(1.25rem, 2vw, 2rem);
+}
+
+/* --------------------------------------------------------------------------
+   6. HEADER & NAVIGATION (GLASSMORPHISM & LOGO BADGE)
+   -------------------------------------------------------------------------- */
+.header-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  transition: background-color var(--transition-normal), backdrop-filter var(--transition-normal), box-shadow var(--transition-normal), border-bottom-color var(--transition-normal);
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.header-sticky.backdrop-blur,
+.header-sticky.header-scrolled {
+  background-color: var(--color-surface-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-sm);
+  border-bottom-color: rgba(232, 220, 210, 0.7);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Logo Badge Pill - protects white raster canvas on any background */
+.brand-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo-link:hover {
+  transform: scale(1.02);
+}
+
+.logo-badge {
+  background-color: #FFFFFF;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(24, 56, 112, 0.08);
+  border: 1px solid rgba(232, 220, 210, 0.6);
+  display: flex;
+  align-items: center;
+}
+
+.logo-badge img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Desktop Navigation */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-brand-navy);
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-brand-coral);
+  transition: width var(--transition-normal);
+  border-radius: 2px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-brand-coral-text);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Mobile Hamburger Menu */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 3px 0;
+  background-color: var(--color-brand-navy);
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+}
+
+.mobile-menu-btn.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-btn.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Slide-out Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 82%;
+  max-width: 380px;
+  height: 100vh;
+  background-color: var(--color-surface-cream);
+  box-shadow: var(--shadow-modal);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--header-height) + 1.5rem) 2rem 2rem;
+  transition: right var(--transition-smooth);
+  overflow-y: auto;
+}
+
+.mobile-drawer.is-open {
+  right: 0;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(14, 35, 71, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.drawer-backdrop.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.drawer-link {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-brand-navy);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.drawer-link:hover,
+.drawer-link.active {
+  color: var(--color-brand-coral-text);
+  padding-left: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. BRAND MOTIFS & DECORATIVE ELEMENTS
+   -------------------------------------------------------------------------- */
+
+/* Speed Underline Accent (derives from logo baseline) */
+.speed-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.speed-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0.08em;
+  left: 0;
+  width: 100%;
+  height: 0.28em;
+  background-color: var(--color-brand-coral);
+  opacity: 0.35;
+  transform: skewX(-12deg);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+/* Starburst Motif Icon */
+.starburst-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  color: var(--color-brand-coral);
+}
+
+.starburst-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Section Header Component */
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.section-header .badge-pill {
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(1.05rem, 1.2vw + 0.3rem, 1.2rem);
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   8. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 4rem;
+  background-color: var(--color-surface-sand);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(253, 248, 245, 0.94) 0%, rgba(244, 234, 225, 0.88) 55%, rgba(24, 56, 112, 0.4) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+
+.hero-badge-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  margin-bottom: 1.5rem;
+  color: var(--color-brand-navy-deep);
+}
+
+.hero-title .script-accent {
+  display: block;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.1;
+  color: var(--color-brand-coral);
+  margin-bottom: 0.25rem;
+}
+
+.hero-lead {
+  font-size: clamp(1.1rem, 1.5vw + 0.3rem, 1.35rem);
+  line-height: 1.65;
+  color: var(--color-text-body);
+  margin-bottom: 2.25rem;
+  max-width: 660px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Four Pillars Strip */
+.hero-pillars-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(24, 56, 112, 0.12);
+}
+
+.pillar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pillar-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand-coral);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.pillar-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-brand-navy);
+  line-height: 1.3;
+}
+
+/* --------------------------------------------------------------------------
+   9. STORY / PHILOSOPHY SECTION
+   -------------------------------------------------------------------------- */
+.story-section {
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+  background-color: var(--color-surface-cream);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.story-visual-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+}
+
+.story-visual-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  transition: transform var(--transition-smooth);
+}
+
+.story-visual-wrap:hover img {
+  transform: scale(1.03);
+}
+
+.story-badge-corner {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: rgba(253, 248, 245, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.story-badge-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-brand-navy);
+}
+
+.story-badge-sub {
+  font-size: 0.82rem;
+  color: var(--color-brand-coral-text);
+  font-weight: 600;
+}
+
+.story-values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.value-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.value-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.value-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-brand-coral-soft);
+  color: var(--color-brand-coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.value-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-brand-navy);
+  margin-bottom: 0.35rem;
+}
+
+.value-card-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   10. SENSORY EXPERIENCES & INTERACTIVE TABS
+   -------------------------------------------------------------------------- */
+.experiences-section {
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+  background-color: var(--color-surface-sand);
+}
+
+.tab-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.tab-btn {
+  padding: 0.75rem 1.65rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.92rem;
+  background-color: #FFFFFF;
+  color: var(--color-brand-navy);
+  border: 1px solid var(--color-border-subtle);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.tab-btn:hover {
+  border-color: var(--color-brand-coral);
+  color: var(--color-brand-coral-text);
+}
+
+.tab-btn.active {
+  background-color: var(--color-brand-navy);
+  color: #FFFFFF;
+  border-color: var(--color-brand-navy);
+  box-shadow: var(--shadow-sm);
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.experience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.experience-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-surface-sand-dark);
+}
+
+.experience-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.experience-card:hover .experience-card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.experience-card-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+}
+
+.experience-card-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.experience-card-time {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-brand-coral-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.experience-card-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-brand-navy);
+  margin-bottom: 0.75rem;
+}
+
+.experience-card-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.experience-card-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.experience-tag {
+  font-size: 0.78rem;
+  padding: 0.25rem 0.65rem;
+  background: var(--color-surface-sand);
+  color: var(--color-brand-navy);
+  border-radius: var(--radius-xs);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   11. PHOTOGRAPHY GALLERY & LIGHTBOX MODAL
+   -------------------------------------------------------------------------- */
+.gallery-section {
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+  background-color: var(--color-surface-cream);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  background-color: var(--color-surface-sand);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14, 35, 71, 0.85) 0%, rgba(14, 35, 71, 0.2) 60%, transparent 100%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  color: #FFFFFF;
+}
+
+.gallery-card:hover .gallery-card-overlay {
+  opacity: 1;
+}
+
+.gallery-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+}
+
+.gallery-card-tag {
+  font-size: 0.82rem;
+  color: var(--color-surface-sand-dark);
+  font-weight: 600;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal);
+}
+
+.lightbox-modal.is-active,
+.lightbox-modal.active,
+.lightbox-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 35, 71, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.lightbox-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-surface-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-modal);
+}
+
+.lightbox-img-wrap {
+  width: 100%;
+  max-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+}
+
+.lightbox-img-wrap img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+.lightbox-caption-bar {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: var(--color-surface-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lightbox-caption-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-brand-navy);
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.65);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox-close-btn:hover {
+  background: var(--color-brand-coral);
+}
+
+/* --------------------------------------------------------------------------
+   12. SCHEDULE & COMMUNITY REVIEWS
+   -------------------------------------------------------------------------- */
+.schedule-section {
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+  background-color: var(--color-surface-sand);
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.schedule-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-card);
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.schedule-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed var(--color-border-subtle);
+  font-size: 0.95rem;
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+}
+
+.schedule-day {
+  font-weight: 600;
+  color: var(--color-brand-navy);
+}
+
+.schedule-time {
+  color: var(--color-text-body);
+  font-weight: 500;
+}
+
+.schedule-highlight {
+  color: var(--color-brand-coral-text);
+  font-weight: 700;
+}
+
+/* Community Reviews Cards */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.review-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-card);
+}
+
+.review-stars {
+  color: #E89E23;
+  margin-bottom: 0.75rem;
+  display: flex;
+  gap: 0.2rem;
+}
+
+.review-text {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--color-text-body);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-brand-navy-soft);
+  color: var(--color-brand-navy);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.review-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--color-brand-navy);
+}
+
+.review-source {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   13. RESERVATION & CONTACT SECTION
+   -------------------------------------------------------------------------- */
+.reservation-section {
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+  background-color: var(--color-surface-cream);
+  position: relative;
+}
+
+.reservation-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-elevated);
+  overflow: hidden;
+}
+
+.reservation-form-wrap {
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.reservation-info-wrap {
+  background-color: var(--color-brand-navy-deep);
+  color: var(--color-surface-cream);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-brand-navy);
+  margin-bottom: 0.45rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  background-color: var(--color-surface-cream);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-body);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  background-color: #FFFFFF;
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 4px rgba(240, 90, 64, 0.15);
+}
+
+.form-control.is-invalid {
+  border-color: #D32F2F;
+  background-color: #FFF8F8;
+}
+
+.form-error {
+  font-size: 0.8rem;
+  color: #D32F2F;
+  margin-top: 0.35rem;
+  display: none;
+}
+
+.form-control.is-invalid + .form-error {
+  display: block;
+}
+
+/* Toast Feedback Notification */
+.toast-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--color-brand-navy-deep);
+  color: #FFFFFF;
+  padding: 1rem 1.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-modal);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  z-index: 3000;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+  border-left: 4px solid var(--color-brand-coral);
+}
+
+.toast-notification.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   14. FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-brand-navy-deep);
+  color: var(--color-surface-sand);
+  padding: clamp(4rem, 6vw, 6rem) 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand p {
+  color: var(--color-surface-sand-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 340px;
+}
+
+.footer-heading {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  color: var(--color-surface-sand-dark);
+  font-size: 0.92rem;
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-brand-coral-hover);
+  padding-left: 0.25rem;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.social-btn:hover {
+  background-color: var(--color-brand-coral);
+  transform: translateY(-2px);
+}
+
+.footer-newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.footer-newsletter-input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-pill);
+  color: #FFFFFF;
+  font-size: 0.9rem;
+}
+
+.footer-newsletter-input:focus {
+  outline: none;
+  border-color: var(--color-brand-coral);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   15. RESPONSIVE GRID LAYOUTS & MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+
+/* Standard Multi-Column Grids */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Gallery column spans */
+.gallery-span-8 { grid-column: span 8; }
+.gallery-span-6 { grid-column: span 6; }
+.gallery-span-4 { grid-column: span 4; }
+
+/* Large Tablets & Small Laptops (<1024px) */
+@media screen and (max-width: 1024px) {
+  .nav-links, .nav-actions .btn-desktop {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .reservation-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .gallery-span-8, .gallery-span-6, .gallery-span-4 {
+    grid-column: span 6;
+  }
+}
+
+/* Tablets & Large Phones (<768px) */
+@media screen and (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-span-8, .gallery-span-6, .gallery-span-4 {
+    grid-column: 1 / -1;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Small Mobile Phones (<480px) */
+@media screen and (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .logo-badge img {
+    height: 34px;
+  }
+
+  .reservation-form-wrap,
+  .reservation-info-wrap {
+    padding: 1.25rem 1rem;
+    overflow-wrap: break-word;
+  }
+
+  .form-control,
+  .form-group,
+  .reservation-container,
+  .reservation-card {
+    min-width: 0;
+  }
+
+  .select-wrapper select,
+  select.form-control {
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   BAR & RESTAURANTE — bloques añadidos con la fotografía real de el Social
+   (hero oscuro, carta de la barra, sedes y sello de reservas)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   HERO OSCURO
+   La foto de la barra es un interior de luz cálida sobre ladrillo: con el velo
+   crema original quedaba lavada. Aquí el velo se invierte a azul marino para
+   que la foto se lea y el texto pase contraste AA en blanco.
+   -------------------------------------------------------------------------- */
+.hero-dark {
+  background-color: var(--color-brand-navy-deep);
+}
+
+.hero-dark .hero-overlay {
+  background:
+    linear-gradient(100deg,
+      rgba(11, 26, 52, 0.94) 0%,
+      rgba(11, 26, 52, 0.88) 38%,
+      rgba(11, 26, 52, 0.62) 70%,
+      rgba(11, 26, 52, 0.42) 100%),
+    linear-gradient(to top, rgba(11, 26, 52, 0.88) 0%, rgba(11, 26, 52, 0) 45%);
+}
+
+.hero-dark .hero-title {
+  color: #FFFFFF;
+}
+
+.hero-dark .hero-title .script-accent {
+  color: #FF8062;                      /* coral aclarado: 6.2:1 sobre el velo marino */
+}
+
+.hero-dark .hero-lead {
+  color: rgba(253, 248, 245, 0.9);
+}
+
+.hero-dark .hero-pillars-strip {
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+
+.hero-dark .pillar-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #FF8062;
+  box-shadow: none;
+}
+
+.hero-dark .pillar-text {
+  color: var(--color-surface-sand);
+  text-shadow: 0 1px 10px rgba(11, 26, 52, 0.85);
+}
+
+.hero-dark .hero-scroll-cue {
+  color: rgba(253, 248, 245, 0.86);
+  text-shadow: 0 1px 10px rgba(11, 26, 52, 0.85);
+}
+
+.hero-dark .hero-scroll-cue:hover {
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   LA CARTA DE LA BARRA
+   -------------------------------------------------------------------------- */
+.carta-block {
+  margin-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-top: clamp(3rem, 5vw, 4.5rem);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.carta-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+/* Las cartas son archivos de 319 px de ancho: se muestran a tamaño casi nativo
+   para que el texto del menú se lea sin ampliarse. */
+.carta-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.carta-card {
+  aspect-ratio: 319 / 413;
+  background-color: var(--color-brand-navy-deep);
+}
+
+.carta-card img {
+  object-fit: contain;
+}
+
+/* La carta ya es una imagen compuesta: al ampliar no debe recortarse. */
+.carta-card:hover img {
+  transform: none;
+}
+
+.carta-card .gallery-card-overlay {
+  background: linear-gradient(to top, rgba(14, 35, 71, 0.92) 0%, rgba(14, 35, 71, 0.35) 45%, transparent 75%);
+  padding: 1.15rem;
+}
+
+.carta-card .gallery-card-title {
+  font-size: 1.05rem;
+}
+
+.carta-listas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.carta-lista {
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.carta-lista-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-brand-navy);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 2px solid var(--color-brand-coral);
+}
+
+.carta-lista-note {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 0.3rem;
+}
+
+.precio-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.precio-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.precio-nombre {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--color-text-body);
+  flex-shrink: 1;
+}
+
+.precio-nombre em {
+  display: block;
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+  margin-top: 0.15rem;
+}
+
+/* Guía punteada de carta impresa: une el nombre con el precio. */
+.precio-punteo {
+  flex: 1 1 auto;
+  min-width: 1.5rem;
+  border-bottom: 1px dotted var(--color-surface-sand-dark);
+  transform: translateY(-0.25rem);
+}
+
+.precio-valor {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-brand-navy);
+  white-space: nowrap;
+}
+
+.precio-destacado .precio-nombre,
+.precio-destacado .precio-valor {
+  color: var(--color-brand-coral-text);
+}
+
+.carta-pie {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.carta-pie .starburst-icon {
+  color: var(--color-brand-coral);
+  margin-right: 0.4rem;
+}
+
+/* --------------------------------------------------------------------------
+   SEDES
+   -------------------------------------------------------------------------- */
+.sedes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.sede-card {
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.sede-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.sede-card-img {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-surface-sand);
+}
+
+.sede-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Las fotos son cuadradas y el rótulo va arriba: el recorte sube. */
+  object-position: center 38%;
+}
+
+.sede-card-body {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.sede-card-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-brand-navy);
+  margin: 0;
+}
+
+.sede-card-desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.sede-card-link {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-brand-coral-text);
+  text-decoration: none;
+}
+
+.sede-card-link:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   SELLO DE RESERVAS
+   El sello original es un disco azul: sobre el panel marino desaparecería,
+   así que se monta en una placa crema como una calcomanía.
+   -------------------------------------------------------------------------- */
+.sede-sello {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background-color: var(--color-surface-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.55);
+}
+
+.sede-sello img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .carta-cards {
+    grid-template-columns: minmax(0, 320px);
+  }
+
+  .carta-block {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   FOTOGRAFÍA Y CAMPAÑAS REALES DE EL SOCIAL
+   Relevo del hero, franja de frases, dato histórico, banda de marca,
+   bloque de noche y afiche de reservas.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   HERO — RELEVO DE FOTOGRAFÍAS
+   Tres capas superpuestas que se funden entre sí. El fundido va en opacidad
+   y no en display para que el navegador lo componga sin reflujo.
+   -------------------------------------------------------------------------- */
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.6s ease-in-out;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   FRANJA DE FRASES
+   La pista repite las frases dos veces y la animación recorre exactamente la
+   mitad: el punto final coincide con el inicial, así el desfile no salta y,
+   con movimiento reducido, el estado congelado se ve idéntico.
+   -------------------------------------------------------------------------- */
+.frases-banda {
+  background-color: var(--color-brand-navy);
+  color: var(--color-surface-cream);
+  padding: 0.9rem 0;
+  overflow: hidden;
+  border-top: 3px solid var(--color-brand-coral);
+  border-bottom: 3px solid var(--color-brand-coral);
+}
+
+.frases-pista {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  animation: desfile-frases 46s linear infinite;
+}
+
+.frases-banda:hover .frases-pista,
+.frases-banda:focus-within .frases-pista {
+  animation-play-state: paused;
+}
+
+.frase {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-style: italic;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.frase-aspa {
+  color: var(--color-brand-coral);
+  font-size: 0.9rem;
+}
+
+@keyframes desfile-frases {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* --------------------------------------------------------------------------
+   DATO HISTÓRICO (1897)
+   -------------------------------------------------------------------------- */
+.dato-historico {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-sand);
+  border-left: 4px solid var(--color-brand-wine);
+}
+
+.dato-historico img {
+  width: 96px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.dato-anio {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-brand-wine);
+  margin-bottom: 0.4rem;
+}
+
+.dato-texto {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--color-text-body);
+}
+
+/* --------------------------------------------------------------------------
+   BANDA DE MARCA
+   -------------------------------------------------------------------------- */
+.banda-marca {
+  display: block;
+  background-color: var(--color-brand-navy-deep);
+  line-height: 0;
+}
+
+.banda-marca img {
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* --------------------------------------------------------------------------
+   LA NOCHE DEL SOCIAL
+   -------------------------------------------------------------------------- */
+.noche-block {
+  margin-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-top: clamp(3rem, 5vw, 4.5rem);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.noche-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+
+.noche-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-brand-navy-deep);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.noche-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.noche-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Los afiches son piezas cerradas: se muestran completos, sin recorte. */
+.noche-card-afiche img {
+  object-fit: contain;
+}
+
+.noche-card-img {
+  position: absolute;
+  inset: 0;
+}
+
+.noche-card-texto {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.25rem;
+  color: #FFFFFF;
+  background: linear-gradient(to top, rgba(11, 26, 52, 0.95) 0%, rgba(11, 26, 52, 0.72) 55%, transparent 100%);
+}
+
+.noche-card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+  color: #FFFFFF;
+}
+
+.noche-card-texto p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: rgba(253, 248, 245, 0.9);
+}
+
+/* --------------------------------------------------------------------------
+   AFICHE DE RESERVAS
+   Su propia pieza dice "reservá tu mesa": va prendida como un cartel.
+   -------------------------------------------------------------------------- */
+.reserva-afiche {
+  width: 148px;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transform: rotate(-2.5deg);
+  box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.65);
+}
+
+.reserva-afiche img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,45 @@
+/* Image audit: preserve people, campaign lettering and architectural context. */
+.hero-slide { background-position: center; }
+.social-photo img { object-fit: contain; background: #f6ead6; }
+.social-photo-main { height: 390px; }
+.social-photo-small { width: 49%; height: 280px; }
+.moment-stage { height: auto; align-self: start; padding-top: 1rem; }
+.moment-photos { position: relative; inset: auto; width: 100%; aspect-ratio: 4 / 3; border-radius: 12px; transform: rotate(2deg); background: #10213a; }
+.moment-photos img, .moment-photos img.scene-active { object-fit: contain; transform: none; }
+.moment-photos::after { box-shadow: none; }
+.moment-coordinate { top: -8px; left: 12px; }
+.moment-ticket { position: relative; left: auto; bottom: auto; width: 90%; margin: 1.75rem 0 0 auto; transform: rotate(-2deg); }
+.moment-orbit { top: auto; bottom: 20px; right: auto; left: -15px; font-size: 4rem; }
+.experience-card-img-wrap { aspect-ratio: 4 / 3; background: #10213a; }
+.experience-card-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.experience-card:hover .experience-card-img-wrap img { transform: none; }
+.experience-card-badge { position: absolute; top: 100%; left: 0; display: inline-flex; margin: .75rem 1rem; }
+.experience-card-img-wrap { overflow: visible; margin-bottom: 3.5rem; }
+.noche-card-editorial { aspect-ratio: auto; overflow: hidden; }
+.noche-card-editorial .noche-card-img { position: relative; inset: auto; aspect-ratio: 4 / 5; }
+.noche-card-editorial .noche-card-img img { object-fit: contain; }
+.noche-card-editorial .noche-card-texto { position: static; background: #0e2347; min-height: 155px; }
+.noche-card:hover img { transform: none; }
+.noche-card-afiche { align-self: start; }
+.banda-marca img { max-height: none; object-fit: contain; animation: none !important; transform: none !important; }
+.dato-historico img { object-fit: contain; }
+.sede-card-img { aspect-ratio: 1; }
+.sede-card-img > img { object-fit: contain; }
+.gallery-grid.photo-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; align-items: start; }
+.photo-gallery .photo-card { grid-column: auto; grid-row: auto; height: auto; }
+.photo-gallery .photo-card img { display: block; width: 100%; height: auto; object-fit: contain; }
+.photo-gallery .gallery-card-overlay, .campaigns-grid .gallery-card-overlay { position: static; opacity: 1; background: #0e2347; padding: 1rem; }
+.photo-gallery .gallery-card:hover img, .campaigns-grid .gallery-card:hover img { transform: none; }
+.photo-gallery .gallery-card-title, .campaigns-grid .gallery-card-title { font-size: 1rem; }
+.campaigns-block { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid #18387033; }
+.campaigns-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; align-items: start; }
+.campaigns-grid img { display: block; width: 100%; height: auto; object-fit: contain; }
+@media(max-width:1000px) { .social-photo-main { height: 320px; } .social-photo-small { height: 235px; } }
+@media(max-width:760px) {
+ .moment-stage { height: auto; }
+ .moment-ticket { width: 92%; }
+ .gallery-grid.photo-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .campaigns-grid { grid-template-columns: minmax(0, 420px); justify-content: center; }
+}
+@media(max-width:700px) { .social-photo-main { height: 300px; } .social-photo-small { height: 220px; } }
+@media(max-width:400px) { .gallery-grid.photo-gallery { grid-template-columns: minmax(0,1fr); } .social-photo-small { height: 180px; } }

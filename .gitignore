@@ -1,0 +1,14 @@
+# Material descartado que ya no aparece en la página: las ilustraciones
+# generadas antes de tener fotografía real, y un recorte duplicado de la barra.
+# Se conservan en local por si hacen falta, pero no son parte del entregable.
+assets/images/_reemplazadas/
+
+# Sistema operativo y editores
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Dependencias (hoy no hay ninguna, pero que no se cuelen)
+node_modules/
