@@ -11,6 +11,7 @@
  * 6. Reservation Form Validation & Toast Notification (Regex, Feedback, Auto-dismiss)
  * 7. Secondary Handlers (Newsletter form, smooth scroll anchors)
  * 8. Hero Photo Relay (crossfade, pausa en pestaña oculta y con movimiento reducido)
+ * 9. Cinta de propuesta (la cabecera fija se corre mientras la cinta se ve)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -569,6 +570,29 @@ document.addEventListener('DOMContentLoaded', () => {
       quietud.addEventListener('change', alCambiarQuietud);
     } else if (typeof quietud.addListener === 'function') {
       quietud.addListener(alCambiarQuietud);
+    }
+  }
+
+  /* =========================================================================
+     9. CINTA DE PROPUESTA Y CABECERA FIJA
+     ========================================================================= */
+  const cintaPropuesta = document.querySelector('.cinta-propuesta');
+
+  if (cintaPropuesta && header) {
+    // La cinta puede ocupar una o dos líneas según el ancho: se mide, no se
+    // asume. La cabecera baja mientras quede cinta visible y sube al pasarla.
+    const acomodarCabecera = () => {
+      const alto = cintaPropuesta.offsetHeight;
+      const visible = Math.max(0, Math.min(alto, cintaPropuesta.getBoundingClientRect().bottom));
+      header.style.top = visible + 'px';
+    };
+
+    acomodarCabecera();
+    window.addEventListener('scroll', acomodarCabecera, { passive: true });
+    window.addEventListener('resize', acomodarCabecera);
+
+    if (typeof ResizeObserver === 'function') {
+      new ResizeObserver(acomodarCabecera).observe(cintaPropuesta);
     }
   }
 });
